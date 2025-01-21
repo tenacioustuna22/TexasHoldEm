@@ -3,7 +3,7 @@ from settings import *
 import pygame, random
 
 CardTuple = namedtuple('Card', ['value', 'suit'])
-
+#testing
 cardvalues = [2, 3, 4, 5, 6, 7, 8, 9, "T",
   "J", # Jack
   "Q", # Queen
