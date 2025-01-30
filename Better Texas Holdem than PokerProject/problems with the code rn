@@ -1,0 +1,9 @@
+1) if player types invalid amount, game forgets current_bet - last_bet in bet logic i think
+
+2) too much money is being taken from players
+
+3) logic for all in, seperate pot
+
+4) card logic
+
+5) repeat through rounds, change blinds, etc.
