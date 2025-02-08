@@ -1,0 +1,11 @@
+i need to get the all in amount, or the last_bet of the person that went all in
+
+then i need to take the pot up until that point
+
+then i need to check to see if any players last_bets are larger than the all in bet
+
+if it is larger then i need to only add the amount = to the all in amount
+
+after the all in bet is made, i will take all bet_amounts + last_bets = all_in and add it to the all in players pot.
+
+then after is a smaller all in_bet is made, it should automatically take all of the previous last_bets that are larger than their all in, - from the amount that player can win, and we should be golden
