@@ -530,13 +530,18 @@ class Game:
         self.players.insert(0, last_player)
             
     
- 
+    def check_for_all_ins(self):
+        if len([player for player in self.players if not player.is_all_in]) == 1:
+            return True
+        else:
+            return False
+            
         
     
 # DETERMINING THE WINNER 
 
     def if_everyone_folds(self):
-        active_players = [player for player in self.players if not player.is_folded]
+        active_players = [player for player in self.players if not player.is_folded or player.is_all_in]
         if len(active_players) == 1:
             winner = active_players[0]
             self.winner = [winner]
@@ -643,6 +648,8 @@ class Game:
         # 3) Pre-Flop betting
         self.initial_betting_sequence()
         self.calculate_all_in_amounts()
+        if self.check_for_all_ins():
+            return
         if self.if_everyone_folds():
             return  # Round ends immediately
 
@@ -653,6 +660,8 @@ class Game:
         self.reset_current_bet()
         self.post_betting_sequence()
         self.calculate_all_in_amounts()
+        if self.check_for_all_ins():
+            return
         if self.if_everyone_folds():
             return
 
@@ -663,6 +672,8 @@ class Game:
         self.reset_current_bet()
         self.post_betting_sequence()
         self.calculate_all_in_amounts()
+        if self.check_for_all_ins():
+            return
         if self.if_everyone_folds():
             return
 
